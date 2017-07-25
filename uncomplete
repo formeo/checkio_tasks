@@ -1,0 +1,91 @@
+def checkio(matrix):
+    print(matrix)
+    if len(matrix)==1:
+        matrix=matrix[0]
+
+
+
+    sequence = False
+    for enum in matrix:
+        elem_prev = None
+        count_seq = 0
+        # horizontal
+
+        for elem in enum:
+            if elem == elem_prev or elem_prev == None:
+                count_seq += 1
+                if count_seq >= 4:
+                    return True
+            else:
+              if count_seq>1:
+                 count_seq -= 1
+
+            elem_prev = elem
+    elem_row_prev = None
+    start_coord = [0, 0]
+    finish_coord = [len(matrix) - 1, len(matrix[len(matrix) - 1]) - 1]
+
+    coord_x = 0
+    coord_y = 0
+    count_seq = 0
+    
+    while start_coord != finish_coord:
+
+        start_coord[0] = coord_x
+        start_coord[1] = coord_y
+        if coord_y == len(matrix[len(matrix) - 1]) - 1:
+            coord_x += 1
+            if coord_x == len(matrix) - 1 and coord_y != len(matrix[len(matrix) - 1]) - 1:
+                break
+            coord_y = 0
+        else:
+            coord_y += 1
+
+        if matrix[start_coord[1]][start_coord[0]] == elem_row_prev or elem_row_prev == None:
+
+            count_seq += 1
+            # print ('count_seq',count_seq)
+            if count_seq >= 4:
+                sequence = True
+                return sequence
+        else:
+            count_seq -= 1
+            sequence = False
+        elem_row_prev = matrix[start_coord[1]][start_coord[0]]
+
+    start_coord = [0, 0]
+    coord_x = 0
+    coord_y = 0
+    count_seq = 0
+    while start_coord != finish_coord:
+
+        start_coord[0] = coord_x
+        start_coord[1] = coord_y
+        if coord_y == len(matrix[len(matrix) - 1]) - 1:
+            coord_x += 1
+            if coord_x == len(matrix) - 1 and coord_y != len(matrix[len(matrix) - 1]) - 1:
+                break
+            coord_y = 0
+        else:
+            coord_y += 1
+ 
+    for x in range(len(matrix[0])):
+        for y in range(len(matrix)):
+
+            if y < 3:
+                if y + 3 <= len(matrix[0]) - 1 and x + 3 <= len(matrix) - 1:
+                    if matrix[x][y] == matrix[x + 1][y + 1] == matrix[x + 2][y + 2] == matrix[x + 3][y + 3]:
+                        return True
+            if y >= 4 and len(matrix[0]) - y < 4:
+                if  x + 3 <= len(matrix) - 1:
+                    if matrix[x][y] == matrix[x + 1][y - 1] == matrix[x + 2][y - 2] == matrix[x + 3][y - 3]:
+                        return True
+            if y >= 4 and len(matrix[0]) - y >= 4:
+
+                if x + 3 <= len(matrix) - 1 and y-3>=0:
+                  if matrix[x][y] == matrix[x + 1][y - 1] == matrix[x + 2][y - 2] == matrix[x + 3][y - 3]:
+
+                      return True
+                  if matrix[x][y] == matrix[x + 1][y + 1] == matrix[x + 2][y + 2] == matrix[x + 3][y + 3]:
+                      return True
+    return False

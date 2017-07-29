@@ -7,3 +7,4 @@
 ## Electronic Station
 * Roman Numerals - RomanNumerals.py
 * Reverse Roman Numerals - ReverseRomanNumerals.py
+* Find Sequence = FindSequence.py

@@ -9,3 +9,5 @@
 * Reverse Roman Numerals - ReverseRomanNumerals.py
 * Find Sequence - FindSequence.py
 * Three Points Circle - ThreePointsCircle.py
+## Mine
+* Flatten a list = Flatten_a_list_via_str.py

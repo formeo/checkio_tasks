@@ -4,6 +4,7 @@
 * Non-unique Elements - Non-uniqueElements.py
 * House Password - HousePassword.py
 * Monkey Typing - MonkeyTyping.py
+* Xs and Os Referee - XsandOsReferee.py
 ## Electronic Station
 * Roman Numerals - RomanNumerals.py
 * Reverse Roman Numerals - ReverseRomanNumerals.py

@@ -13,3 +13,5 @@
 * The Hamming Distance - The_Hamming_istance.py
 ## Mine
 * Flatten a list = Flatten_a_list_via_str.py
+## Scientific Expedition
+Common Words - CommonWords.py

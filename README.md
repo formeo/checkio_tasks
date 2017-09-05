@@ -14,5 +14,5 @@
 ## Mine
 * Flatten a list = Flatten_a_list_via_str.py
 ## Scientific Expedition
-Common Words - CommonWords.py
-The Angles of a Triangle - TheAnglesofaTriangle.py
+* Common Words - CommonWords.py
+* The Angles of a Triangle - TheAnglesofaTriangle.py
